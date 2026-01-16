@@ -1,4 +1,4 @@
-# uplift-art
+# Uplift Art Foundation
 # Art Outreach Website
 
 This repository contains the official website for a nonprofit art initiative dedicated to creating and distributing handmade cards to hospitalized children. The website serves as a central platform for sharing the organization’s mission, showcasing outreach efforts, and supporting community engagement.
