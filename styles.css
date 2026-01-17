@@ -1,1 +1,177 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* ================= VARIABLES ================= */
+:root {
+  --burgundy: #5b1f2b;
+  --burgundy-soft: #7a2e3b;
+  --cream: #f7f3f0;
+  --ink: #2b2b2b;
+  --grid-line: rgba(0, 0, 0, 0.04);
+}
+
+/* ================= BASE ================= */
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--burgundy);
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.centered {
+  text-align: center;
+}
+
+/* ================= LAYOUT ================= */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.container.narrow {
+  max-width: 720px;
+}
+
+.section {
+  position: relative;
+}
+
+/* ================= GRID BACKGROUND ================= */
+.grid-bg {
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url("card-aesthetic.jpeg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(91, 31, 43, 0.75);
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  color: white;
+}
+
+.hero-tagline {
+  font-size: 1.2rem;
+  margin: 1.2rem 0 2rem;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta {
+  display: inline-block;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  background: white;
+  color: var(--burgundy);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ================= STATS ================= */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.stat-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* ================= GALLERY ================= */
+.gallery {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background: var(--burgundy);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .container {
+    padding: 3rem 1.2rem;
+  }
+}
