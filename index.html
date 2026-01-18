@@ -5,13 +5,54 @@
   <title>Uplift Art Foundation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Artistic + readable nonprofit fonts -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- ADDITION: Snap + fade styles -->
+  <style>
+    body {
+      overflow: hidden;
+    }
+
+    .snap-container {
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .section,
+    .hero,
+    .footer {
+      scroll-snap-align: start;
+      min-height: 100svh;
+
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+
+    .is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero {
+      min-height: 100svh;
+    }
+
+    .footer {
+      min-height: auto;
+      scroll-snap-align: end;
+    }
+  </style>
 </head>
 
 <body>
+
+<div class="snap-container">
 
   <!-- ================= HERO ================= -->
   <header class="hero">
@@ -31,9 +72,7 @@
       <h2>Our Mission</h2>
       <p>
         Uplift Art Foundation is a nonprofit initiative dedicated to creating and distributing
-        handmade cards to hospitalized children. Each card serves as a quiet reminder that
-        someone is thinking of them — offering encouragement, warmth, and emotional comfort
-        during difficult moments.
+        handmade cards to hospitalized children.
       </p>
       <p>
         Through creativity and community involvement, we transform simple art into meaningful
@@ -42,7 +81,7 @@
     </div>
   </section>
 
-  <!-- ================= IMPACT STATS ================= -->
+  <!-- ================= IMPACT ================= -->
   <section class="section grid-bg" id="impact">
     <div class="container">
       <h2 class="centered">Our Impact</h2>
@@ -50,34 +89,19 @@
       <div class="stats-grid">
         <div class="stat-card">
           <h3>500,000+</h3>
-          <p>
-            Cards distributed nationwide through partnership with
-            <strong>Cards for Hospitalized Kids</strong>.
-          </p>
+          <p>Cards distributed nationwide.</p>
         </div>
-
         <div class="stat-card">
           <h3>50 States</h3>
-          <p>
-            Reaching pediatric patients across the United States with messages
-            of hope and encouragement.
-          </p>
+          <p>Reached across the U.S.</p>
         </div>
-
         <div class="stat-card">
           <h3>8 Schools</h3>
-          <p>
-            Program implemented across schools to engage students
-            in meaningful service through art.
-          </p>
+          <p>Programs implemented.</p>
         </div>
-
         <div class="stat-card">
           <h3>2,000+</h3>
-          <p>
-            Handmade cards created by students and volunteers
-            in local outreach initiatives.
-          </p>
+          <p>Cards handmade locally.</p>
         </div>
       </div>
     </div>
@@ -89,17 +113,14 @@
       <h2 class="centered">Our Work</h2>
 
       <div class="gallery">
-        <img src="card-aesthetic.jpeg" alt="Soft aesthetic handmade card">
-        <img src="card-aesthetic-2.jpeg" alt="Minimal handmade card design">
-
-        <img src="card-spread.jpeg" alt="Spread of handmade cards">
-        <img src="card-spread-2.jpeg" alt="Handwritten encouragement cards">
-        <img src="card-spread-3.jpeg" alt="Cards arranged together">
-        <img src="card-spread-4.jpeg" alt="Assorted handmade cards">
-
-        <img src="colorful-card.jpeg" alt="Colorful handmade card">
-        <img src="colorful-card-2.jpeg" alt="Bright encouragement card">
-
+        <img src="card-aesthetic.jpeg" alt="">
+        <img src="card-aesthetic-2.jpeg" alt="">
+        <img src="card-spread.jpeg" alt="">
+        <img src="card-spread-2.jpeg" alt="">
+        <img src="card-spread-3.jpeg" alt="">
+        <img src="card-spread-4.jpeg" alt="">
+        <img src="colorful-card.jpeg" alt="">
+        <img src="colorful-card-2.jpeg" alt="">
       </div>
     </div>
   </section>
@@ -108,69 +129,70 @@
   <section class="section grid-bg">
     <div class="container narrow">
       <h2>Get Involved</h2>
-      <p>
-        Anyone can help spread kindness. Volunteers, students, and schools
-        are invited to participate by creating handmade cards filled with
-        positive messages for children in hospitals.
-      </p>
-      <p>
-        Together, we turn creativity into compassion.
-      </p>
+      <p>Anyone can help spread kindness.</p>
     </div>
   </section>
 
   <!-- ================= FOUNDER ================= -->
-<section class="section grid-bg founder-section">
-  <div class="container narrow">
+  <section class="section grid-bg founder-section">
+    <div class="container narrow">
+      <h2 class="centered">Meet the Founder</h2>
 
-    <h2 class="centered">Meet the Founder</h2>
+      <div class="founder-content">
+        <img src="founder-photo.jpg" alt="Founder">
 
-    <div class="founder-content">
-      <img src="founder-photo.jpg" alt="Founder of Uplift Art Foundation">
+        <div>
+          <p class="founder-text">
+            Uplift Art Foundation was founded with a simple belief — that creativity
+            can be a form of care.
+          </p>
 
-      <div>
-        <p class="founder-text">
-          Uplift Art Foundation was founded with a simple belief — that creativity
-          can be a form of care. By empowering students and volunteers to create
-          handmade cards, we transform art into moments of connection for children
-          facing hospitalization.
-        </p>
+          <div class="contact-buttons">
+            <a href="mailto:v.agrwl17@gmail.com" class="btn btn-wine">Email Me</a>
 
-        <p class="founder-text">
-          If you’re interested in partnering, supporting the mission, or bringing
-          this program to your school or community, I’d love to connect.
-        </p>
-
-        <div class="contact-buttons">
-          <a href="mailto:v.agrwl17@gmail.com" class="btn btn-wine">
-            Email Me
-          </a>
-          <a <href="https://your-personal-site.com"
-              target="_blank"
-              rel="noopener"
-              class="btn-outline-wine"
-            >
-            Personal Website
-          </a>
-
-            Other Work
-          </a>
+            <!-- FIXED LINK -->
+            <a href="https://your-personal-site.com"
+               target="_blank"
+               rel="noopener"
+               class="btn-outline-wine">
+              Personal Website
+            </a>
+          </div>
         </div>
       </div>
     </div>
-
-  </div>
-</section>
-
+  </section>
 
   <!-- ================= FOOTER ================= -->
   <footer class="footer">
     <div class="container">
-      <p>
-        © Uplift Art Foundation — Creating hope through handmade art.
-      </p>
+      <p>© Uplift Art Foundation — Creating hope through handmade art.</p>
     </div>
   </footer>
+
+</div>
+
+<!-- ADDITION: Fade observer -->
+<script>
+  const container = document.querySelector('.snap-container');
+  const items = document.querySelectorAll('.hero, .section, .footer');
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    },
+    { root: container, threshold: 0.3 }
+  );
+
+  items.forEach(el => observer.observe(el));
+
+  // Reveal hero immediately
+  items[0].classList.add('is-visible');
+</script>
 
 </body>
 </html>
