@@ -12,13 +12,14 @@
 
   <style>
     body {
+      margin: 0;
       overflow: hidden;
     }
 
     /* ================= VERTICAL SNAP ================= */
     .snap-container {
       height: 100vh;
-      overflow-y: scroll;
+      overflow-y: auto;
       scroll-snap-type: y mandatory;
       -webkit-overflow-scrolling: touch;
     }
@@ -27,6 +28,7 @@
     .section,
     .footer {
       scroll-snap-align: start;
+      scroll-snap-stop: always;
       min-height: 100svh;
 
       opacity: 0;
@@ -42,6 +44,11 @@
     .is-visible {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* Fix anchor + snap interaction */
+    #impact {
+      scroll-margin-top: 1px;
     }
 
     /* ================= HORIZONTAL GALLERY SNAP ================= */
@@ -98,7 +105,7 @@
     </div>
   </header>
 
-  <!-- IMPACT (MOVED HERE) -->
+  <!-- OUR IMPACT (FIRST SECTION) -->
   <section class="section grid-bg" id="impact">
     <div class="container">
       <h2 class="centered">Our Impact</h2>
@@ -124,8 +131,8 @@
     </div>
   </section>
 
-  <!-- MISSION -->
-  <section class="section grid-bg">
+  <!-- OUR MISSION (SECOND SECTION) -->
+  <section class="section grid-bg" id="mission">
     <div class="container narrow">
       <h2>Our Mission</h2>
       <p>
@@ -219,8 +226,14 @@
   const items = document.querySelectorAll('.hero, .section, .footer');
 
   const observer = new IntersectionObserver(
-    entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('is-visible')),
-    { root: container, threshold: 0.3 }
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    },
+    { root: container, threshold: 0.35 }
   );
 
   items.forEach(el => observer.observe(el));
@@ -231,7 +244,9 @@
   const dotsContainer = document.querySelector('.gallery-dots');
   const images = gallery.querySelectorAll('img');
 
-  let isDown = false, startX, scrollLeft;
+  let isDown = false;
+  let startX;
+  let scrollLeft;
 
   gallery.addEventListener('mousedown', e => {
     isDown = true;
@@ -245,7 +260,8 @@
   gallery.addEventListener('mousemove', e => {
     if (!isDown) return;
     e.preventDefault();
-    gallery.scrollLeft = scrollLeft - (e.pageX - gallery.offsetLeft - startX) * 1.5;
+    const x = e.pageX - gallery.offsetLeft;
+    gallery.scrollLeft = scrollLeft - (x - startX) * 1.5;
   });
 
   images.forEach((_, i) => {
@@ -257,9 +273,11 @@
   const dots = dotsContainer.querySelectorAll('span');
 
   gallery.addEventListener('scroll', () => {
-    const index = Math.round(gallery.scrollLeft / gallery.firstElementChild.offsetWidth);
+    const index = Math.round(
+      gallery.scrollLeft / gallery.firstElementChild.offsetWidth
+    );
     dots.forEach(d => d.classList.remove('active'));
-    dots[index]?.classList.add('active');
+    if (dots[index]) dots[index].classList.add('active');
   });
 </script>
 
