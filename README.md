@@ -1,23 +1,49 @@
-# Uplift Art Foundation
-# Art Outreach Website
+# Pediatric Art Outreach Website
+> A simple nonprofit website supporting pediatric art outreach, built to be reliable, clear, and easy to maintain.
 
-This repository contains the official website for a nonprofit art initiative dedicated to creating and distributing handmade cards to hospitalized children. The website serves as a central platform for sharing the organization’s mission, showcasing outreach efforts, and supporting community engagement.
-
-## Mission
-The nonprofit focuses on using creative expression to provide encouragement, comfort, and emotional support to pediatric patients through the distribution of handmade cards. The website exists to amplify this mission, increase visibility, and streamline outreach efforts.
-
-## About the Website
-The site is designed to be clear, accessible, and impact-focused, presenting the organization’s work in a simple and engaging way. It highlights the nonprofit’s purpose, ongoing initiatives, and opportunities for involvement while maintaining a calm and welcoming visual identity.
-
-## Tech Stack
-- **HTML** – Page structure and semantic content  
-- **CSS** – Styling, layout, and responsive design  
-- **JavaScript** – Interactivity and dynamic behavior  
+---
 
 ## Features
-- Informational pages outlining the nonprofit’s mission and impact  
-- Visual presentation of card designs and outreach efforts  
-- Clean, responsive layout optimized for desktop and mobile  
-- Simple structure to allow easy updates and scalability  
+- Static website built with plain HTML and CSS  
+- Clear presentation of mission, programs, and impact  
+- Lightweight design focused on readability and accessibility  
+- No backend or build tools required  
+- Easy for volunteers to update and extend  
+
+---
+
+## Why This Exists
+Small nonprofits often need a web presence, but not the overhead that comes with complex frameworks or platforms. When sites are hard to update, they quietly go stale.
+
+This site is meant to last. It keeps the focus on the mission and makes it easy for anyone on the team to maintain without specialized technical knowledge.
+
+---
+
+## How It Works
+The site is intentionally straightforward.
+
+1. Content is written directly in HTML for clarity  
+2. CSS handles layout, typography, and responsiveness  
+3. Pages can be edited or added without touching any tooling  
+4. The site can be hosted anywhere that supports static files  
+
+There are no external dependencies that can break or become obsolete.
+
+---
+
+## Tech Stack
+- **Frontend:** HTML, CSS  
+- **Hosting:** Static hosting (GitHub Pages, Netlify, etc.)  
+- **Architecture:** Static site  
+
+---
 
 ## Project Structure
+```text
+pediatric-art-outreach/
+├── index.html
+├── about.html
+├── programs.html
+├── css/
+│   └── styles.css
+└── README.md
